@@ -1,0 +1,13 @@
+# 编译产物
+*.exe
+*.obj
+*.o
+*.out
+*.a
+*.so
+*.dll
+*.lib
+
+# 调试文件
+*.pdb
+*.ilk
