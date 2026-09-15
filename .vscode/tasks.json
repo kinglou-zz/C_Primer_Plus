@@ -3,7 +3,7 @@
         {
             "type": "cppbuild",
             "label": "tast gcc",
-            "command": "D:\\APPs\\VSCode\\mingw64\\bin\\gcc.exe",
+            "command": "gcc",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g", 
