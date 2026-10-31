@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int ch;
+    FILE * fp;
+    char fname[50];         // to hold the file name
+    int count = 0;
+    
+    printf("Enter the name of the file: ");
+    scanf("%s", fname);
+    fp = fopen(fname, "r"); // open file for reading
+    if (fp == NULL)         // attempt failed
+    {
+	    printf("Failed to open file. Bye\n");
+	    exit(1);            // quit program
+    }
+    // getc(fp) gets a character from the open file
+    while ((ch = getc(fp)) != EOF)
+        count++;
+    fclose(fp);             // close the file
+
+    printf("%d characters read.\n", count);
+    
+    return 0;
+} 
