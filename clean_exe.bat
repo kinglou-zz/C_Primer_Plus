@@ -11,7 +11,7 @@ echo 注意: 此脚本会删除该目录下的 .exe 文件,
 echo       请确认这里没有需要保留的可执行文件。
 echo.
 
-set /p sub=是否连同子文件夹一起清理? [y/N] 
+set /p sub=是否连同子文件夹一起清理? [y/n] 
 
 set count=0
 if /i "!sub!"=="y" (
@@ -36,7 +36,7 @@ if /i "!sub!"=="y" (
 )
 
 echo.
-set /p confirm=确认全部删除? [y/N] 
+set /p confirm=确认全部删除? [y/n] 
 if /i not "!confirm!"=="y" (
     echo.
     echo 已取消,未删除任何文件。
