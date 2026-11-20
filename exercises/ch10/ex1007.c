@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+#define ROWS 4
+#define COLS 2
+
+void copy_ptr(double * target, const double * source, int num);
+void display_array2d(const double arr[][COLS], int rows);
+
+int main(void)
+{
+    double source[ROWS][COLS] = {{1.1, 2.2},
+                                 {3.3, 4.4},
+                                 {5.5, 6.6},
+                                 {7.7, 8.8}};
+    double target[ROWS][COLS];
+    printf("The array of source is \n");
+    display_array2d(source, ROWS);
+
+    for(int i = 0; i < ROWS; i++)
+        copy_ptr(*(target + i), *(source + i), COLS);
+    printf("The array of target is \n");
+    display_array2d(target, ROWS);
+
+    return 0;
+}
+
+void copy_ptr(double * target, const double * source, int num)
+{
+    for(int i = 0; i < num; i++)
+        *(target + i) = *(source + i);
+}
+
+void display_array2d(const double arr[][COLS], int rows)
+{
+    printf("[");
+    for(int i = 0; i < rows; i++)
+    {
+        if(i == 0)
+            printf("[");
+        else
+            printf(" [");
+        for(int j = 0; j < COLS; j++)
+        {
+            printf("%g", arr[i][j]);
+            if(j != COLS - 1)
+                printf(" ");
+        }
+        if(i != rows - 1)
+            printf("],\n");
+        else
+            printf("]");
+    }
+    printf("]\n");
+}
